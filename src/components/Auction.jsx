@@ -38,7 +38,7 @@ const Auction = () => {
                                 <div className="w-full">
                                     <div>
                                         <h1 className="text-[#1C2228] text-4xl font-bold mt-6 font-mono">
-                                            Lil Noun 29
+                                            Noun 29
                                         </h1>
                                     </div>
                                 </div>
