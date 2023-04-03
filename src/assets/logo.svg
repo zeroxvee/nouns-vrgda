@@ -1,0 +1,13 @@
+<svg width="170" height="55" viewBox="0 0 170 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M70 25H80H90V35H80V45H70V25ZM90 35V45H100V35H90Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55 45H65V25H35V45H45V35H55V45Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 25V35H0V45H20V35H30V25H10Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 10H20V20H0V0H10V10Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M25 0H35V20H25V0Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50 10H60V20H40V0H50V10Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M115 15H125V35H115V15Z" fill="#2A2A29"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M115 35H125V25H105V45H115V35Z" fill="#2A2A29"/>
+<path d="M170 45V25L150 35V55L170 45Z" fill="#2B83F6"/>
+<path d="M130 45L150 55V35L130 25V45Z" fill="#FF638D"/>
+<path d="M170 25L150 15L130 25L150 35L170 25Z" fill="#FFEF16"/>
+</svg>
