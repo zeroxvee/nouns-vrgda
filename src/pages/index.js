@@ -4,9 +4,8 @@ import { Inter } from "next/font/google"
 import styles from "@/styles/Home.module.css"
 import Navbar from "@/components/Navbar"
 import Auction from "@/components/Auction"
-import FAQ from "@/components/FAQ"
 import Footer from "@/components/Footer"
-import favicon from "@/assets/favicon.ico"
+import FAQ from "@/components/FAQ"
 
 export default function Home() {
     return (
@@ -18,7 +17,7 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link rel="icon" href={favicon} />
+                <link rel="icon" href="" />
             </Head>
             <Navbar />
             <main className="App_wrapper__Mru9Z bg-gray-200">

@@ -7,7 +7,7 @@ const chains = [goerli]
 
 const client = createClient(
     getDefaultClient({
-        appName: "nouns-vrga",
+        appName: "nouns-vrgda",
         alchemyUrl,
         chains: chains,
     })

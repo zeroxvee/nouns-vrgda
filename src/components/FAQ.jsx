@@ -5,38 +5,45 @@ const faq = [
     {
         title: "Summary",
         description:
-            "Lil Nouns artwork is in the public domain. Lil Sandbox Nouns are born and trustlessly auctioned via a Gradual Dutch Auction, forever. Settlement of one auction kicks off the next. Artwork is generative and stored directly on-chain (not IPFS). No explicit rules exist for attribute scarcity; all Lil Sandbox Nouns are equally rare.",
+            "Nouns VRGDA artwork is in the public domain. Nouns VRGDA are born and trustlessly auctioned via a Gradual Dutch Auction, forever. Settlement of one auction kicks off the next. Artwork is generative and stored directly on-chain (not IPFS). No explicit rules exist for attribute scarcity; all Nouns are equally rare.",
     },
     {
         title: "Variable Rate Gradual Dutch Auctions",
         description:
-            "The lil sandbox nouns Variable Rate Gradual Dutch Auction, forked from Paradigms implementation - https://www.paradigm.xyz/2022/08/vrgda",
+            "The Nouns Variable Rate Gradual Dutch Auction, forked from Paradigms implementation - https://www.paradigm.xyz/2022/08/vrgda",
     },
     {
-        title: "Lil Sandbox Nouns is not a DAO",
+        title: "Pseudo-random block traits generation",
         description:
-            "Lil Sandbox is just a goerli testnet. Sandbox lils have no voting rights.",
+            "At the core of Nouns VRGDA is the concept of on-chain generated NFTs with traits that change every block. This means that, approximately every ~12.1 seconds, a new NFT with distinct attributes will be created. Users can monitor the Nouns's traits as they evolve and purchase it when it matches their preferences. This approach ensures that NFTs are not only rare and valuable but also highly customizable (pseudo-randomly), catering to individual tastes and desires.",
     },
+
     {
-        title: "Lil Sandbox Noun Traits",
+        title: "On-chain pool of last 3 block unsold Nouns",
         description:
-            "Lil Sandbox Nouns are generated randomly based on Goerli block hashes. There are no 'if' statements or other rules governing Lil Noun trait scarcity, which makes all Lil Nouns equally rare. As of this writing, Lil Nouns are made up of: backgrounds (2), bodies (30)accessories (140), heads (242),glasses (23), You can experiment with off-chain Lil Sandbox Noun generation at the Playground.",
+            "Nouns VRGDA introduces an on-chain pool of last 3 block unsold Nouns, giving users a second chance to acquire NFTs they may have missed during the 12-second block generation period. The pool maintains a record of the three most recent unsold Nouns. When a new NFT is generated, it overwrites the oldest NFT in the pool, ensuring that users always have access to a diverse selection of previously generated NFTs.",
     },
     {
         title: "On-Chain Artwork",
         description:
-            "Lil Nouns are stored directly on Goerli and do not utilize pointers to other networks such as IPFS. This is possible because Lil Sandbox Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression. The compressed parts are efficiently converted into a single base64 encoded SVG image on-chain. To accomplish this, each part is decoded into an intermediate format before being converted into a series of SVG rects using batched, on-chain string concatenation. Once the entire SVG has been generated, it is base64 encoded.",
+            "Nouns VRGDA are stored directly on Goerli and do not utilize pointers to other networks such as IPFS. This is possible because Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression. The compressed parts are efficiently converted into a single base64 encoded SVG image on-chain. To accomplish this, each part is decoded into an intermediate format before being converted into a series of SVG rects using batched, on-chain string concatenation. Once the entire SVG has been generated, it is base64 encoded.",
     },
     {
-        title: "Lil Sandbox Noun Seeder Contract",
+        title: "Nouns VRGDA Noun Traits",
         description:
-            "The Lil Sandbox Noun Seeder contract is used to determine Lil Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Currently, Lil Sandbox Noun traits are determined using pseudo-random number generation:keccak256(abi.encodePacked(blockhash(block.number - 1), nounId)). Trait generation is not truly random. Traits can be predicted when minting a Lil Noun on the pending block.",
+            "Nouns VRGDA are generated randomly based on Goerli block hashes. There are no 'if' statements or other rules governing Lil Noun trait scarcity, which makes all Lil Nouns equally rare. As of this writing, Lil Nouns are made up of: backgrounds (2), bodies (30)accessories (140), heads (242),glasses (23), You can experiment with off-chain Lil Sandbox Noun generation at the Playground.",
     },
-    // {
-    //     title: "Lil Sandbox Nounder's",
-    //     description:
-    //         "'Lil Sandbox Nounders' are the group of builders that initiated Lil Nouns. Here are the Lil Nounders: @nvonpentz, @rocketman, @adelusiam@, lilpanda",
-    // },
+    {
+        title: "Noun VRGDA Seeder Contract",
+        description:
+            "The Noun Seeder contract is used to determine Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Currently, Noun traits are determined using pseudo-random number generation:keccak256(abi.encodePacked(blockhash(block.number - 1), nounId)). Trait generation is not truly random. Traits can be predicted when minting a Noun on the pending block. Will work on possible improvement later",
+    },
+
+    {
+        title: "Conclusion",
+        description:
+            "In conclusion, Nouns VRGDA is a that combines innovative concepts to create a unique and engaging experience. By incorporating pseudo-random block traits generation, the VRGDA pricing mechanism, and an on-chain pool of last 3 block unsold Nouns, our project offers a fresh and exciting approach for users. We believe that Nouns VRGDA will capture the imagination of the NFT community and pave the way for a new era of digital art and collectibles.",
+    },
 ]
 
 export default function FAQ() {
@@ -91,7 +98,7 @@ function AccordionItem({ title, description }) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
-        <div className=" mb-8 border-none transition-all duration-500 ease-in-out">
+        <div className=" mb-8 border-none transition-all duration-500 ">
             <h2
                 className="text-xl font-bold mb-8"
                 id="accordion-collapse-heading"
@@ -99,7 +106,7 @@ function AccordionItem({ title, description }) {
                 <button
                     type="button"
                     aria-expanded={isOpen}
-                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 transition-all ease-in-out"
+                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 transition-all"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {title}
@@ -114,23 +121,23 @@ function AccordionItem({ title, description }) {
                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         ></path>
                     </svg>
                 </button>
             </h2>
             {isOpen && (
-                <div
-                    className="mt-4 text-lg transition-all duration-500 ease-in-out"
+                <span
+                    className="mt-4 text-lg duration-500 transition"
                     id={"accordion-collapse-body"}
                     data-accordion-target="#accordion-collapse-body"
                     aria-expanded="true"
                     aria-controls="accordion-collapse-body"
                 >
                     {description}
-                </div>
+                </span>
             )}
         </div>
     )
