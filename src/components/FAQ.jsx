@@ -1,4 +1,5 @@
 import React from "react"
+import clsx from "clsx"
 
 const faq = [
     {
@@ -46,27 +47,37 @@ export default function FAQ() {
                     <div className="col-lg-10 offset-lg-1">
                         <div className="text-xl pb-16 ">
                             <h1 className="text-5xl font-semibold mb-8 font-mono">
-                                WTF?
+                                WTF is this?
                             </h1>
-                            <p className="mt-4">
-                                LilSandbox.wtf is a testnet for lil nouns DAO to
-                                test out a new minting mechanism for lil nouns
-                                using a Variable Rate Gradual Dutch Auction
-                                mechanism instead of 15-minute english auctions.
+                            <span className="mt-4">
+                                <span className="font-medium">Nouns VRGDA</span>{" "}
+                                is project to test out a new minting mechanism
+                                for nouns using a Variable Rate Gradual Dutch
+                                Auction mechanism instead of english auctions.
                                 <br />
                                 <br />
-                                Lilsandbox NFTs are minted on the goerli
-                                testnet. They have no voting rights in lil nouns
-                                DAO.
-                            </p>
+                                Introducing three concepts:
+                                <li>pseudo-random block traits generation</li>
+                                <li>
+                                    a variable rate token issuance mechanism
+                                </li>
+                                <li>
+                                    an on-chain pool of saved and unbought NFTs
+                                </li>
+                            </span>
                         </div>
-                        <div className="accordion accordion-flush">
-                            {faq.map((item, key) => (
+
+                        <div
+                            className=""
+                            id="accordion-collapse"
+                            data-accordion="collapse"
+                        >
+                            {faq.map((item, index) => (
                                 <AccordionItem
-                                    key={key}
+                                    key={index}
                                     title={item.title}
                                     description={item.description}
-                                ></AccordionItem>
+                                />
                             ))}
                         </div>
                     </div>
@@ -80,18 +91,47 @@ function AccordionItem({ title, description }) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
-        <div className="border-none mb-10">
-            <h2 className="text-lg font-bold">
+        <div className=" mb-8 border-none transition-all duration-500 ease-in-out">
+            <h2
+                className="text-xl font-bold mb-8"
+                id="accordion-collapse-heading"
+            >
                 <button
                     type="button"
                     aria-expanded={isOpen}
-                    className="w-full text-left"
+                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 transition-all ease-in-out"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {title}
+                    <svg
+                        data-accordion-icon
+                        className={clsx(
+                            "w-6 h-6 shrink-0",
+                            isOpen && "rotate-180"
+                        )}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                        ></path>
+                    </svg>
                 </button>
             </h2>
-            {isOpen && <div className="mt-4 text-lg">{description}</div>}
+            {isOpen && (
+                <div
+                    className="mt-4 text-lg transition-all duration-500 ease-in-out"
+                    id={"accordion-collapse-body"}
+                    data-accordion-target="#accordion-collapse-body"
+                    aria-expanded="true"
+                    aria-controls="accordion-collapse-body"
+                >
+                    {description}
+                </div>
+            )}
         </div>
     )
 }

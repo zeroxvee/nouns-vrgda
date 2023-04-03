@@ -128,7 +128,7 @@ const Auction = () => {
                                                     <div className="input-group">
                                                         <button
                                                             type="button"
-                                                            className="Buy_bidBtn__O3Zyw btn btn-primary"
+                                                            className="Buy_bidBtn__O3Zyw btn btn-primary hover:bg-slate-800"
                                                         >
                                                             Buy Now
                                                         </button>

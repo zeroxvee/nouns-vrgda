@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@thirdweb-dev/react": "^3.11.4",
     "@thirdweb-dev/sdk": "^3.10.7",
+    "clsx": "^1.2.1",
     "connectkit": "^1.2.2",
     "dotenv": "^16.0.3",
     "eslint": "8.37.0",
