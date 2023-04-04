@@ -8,7 +8,7 @@ export default function NounID() {
 
     return (
         <div>
-            <h1 className="text-[#1C2228] text-4xl font-bold mt-6 font-mono">
+            <h1 className="text-[#1C2228] text-6xl mt-6">
                 Noun {nextNoun && nextNoun.nounId.toNumber()}
             </h1>
         </div>

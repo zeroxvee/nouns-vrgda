@@ -9,8 +9,8 @@ export default function AuctionDetails() {
 
     return (
         <div className="w-full">
-            <h2 className="text-[#1C2228] text-3xl font-bold">
-                Ξ {currVRGDAPrice && utils.formatEther(currVRGDAPrice.toString())}
+            <h2 className="text-[#1C2228] text-3xl font-['PT Sans']">
+                Ξ {currVRGDAPrice && Number(utils.formatEther(currVRGDAPrice.toString())).toFixed(3)}
             </h2>
         </div>
     )

@@ -11,5 +11,15 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+	fontFamily: {
+		londrina: [
+			"Londrina Solid",
+			"sans-serif",
+		],
+		ptSans: [
+			"PT Sans",
+			"sans-serif",
+		]
+	},
 	plugins: [],
 };

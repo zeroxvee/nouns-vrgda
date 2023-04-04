@@ -65,7 +65,7 @@ export default function AuctionPriceRange() {
           </h4>
           <h4 className="text-sm -mb-2">
             {/* Ξ{currVRGDAPrice && utils.formatEther(currVRGDAPrice.toString())} */}
-            Ξ{midPrice}
+            Ξ{Number(midPrice).toFixed(3)}
           </h4>
           <h4 className="text-sm -mb-2">
             Ξ{targetPrice && utils.formatEther(targetPrice.toString())}
