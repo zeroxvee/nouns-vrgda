@@ -53,7 +53,7 @@ export default function FAQ() {
                 <div className="flex items-center row">
                     <div className="col-lg-10 offset-lg-1">
                         <div className="text-xl pb-16 ">
-                            <h1 className="text-5xl font-semibold mb-8 font-mono">
+                            <h1 className="text-5xl font-semibold mb-8 font-['Londrina Solid']">
                                 WTF is this?
                             </h1>
                             <span className="mt-4">

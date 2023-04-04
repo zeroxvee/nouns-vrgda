@@ -77,12 +77,12 @@ export default function AuctionPriceRange() {
           })}
         </div>
         <>
-          <div
+          {/* <div
             className="absolute mt-1.5 rounded-lg border-solid border-b-black border-b-8 border-x-transparent border-x-8 border-t-0"
             style={{
               left: `${(1 + activeIndex) * 25}px`,
             }}
-          >Ξ{currPrice}</div>
+          >Ξ{currPrice}</div> */}
         </>
       </div>
     </>
