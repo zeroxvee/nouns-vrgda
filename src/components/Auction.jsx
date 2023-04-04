@@ -12,7 +12,7 @@ const lilNoun =
 
 const Auction = () => {
     return (
-        <div className="container bg-gray-200 mx-auto mt-2">
+        <div className="w-[60vw] bg-gray-200 mx-auto mt-2">
             <div className="flex flex-wrap -mx-6 -mt-0">
                 <div className="flex w-full lg:w-1/2">
                     <div className="w-full relative">
@@ -85,7 +85,7 @@ const Auction = () => {
                         </div>
                         <div className="mt-4">
                             <div className="flex flex-col">
-                                <div className="w-3/4">
+                                <div className="w-full">
                                     <div className="flex flex-col space-y-10">
                                         <div className="space-y-2">
                                             <div className="col-lg-12">

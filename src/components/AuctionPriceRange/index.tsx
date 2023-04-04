@@ -14,7 +14,7 @@ const PriceBlock: React.FC<{
         style={{
           border: isActive ? '2px solid #000' : 'none',
         }}
-        className={`md:w-[25px] md:h-[25px] w-[20px] h-[20px] ${bgColor}`}
+        className={`md:w-[25px] md:h-[25px] w-[30px] h-[30px] ${bgColor}`}
       ></div>
     </>
   );
