@@ -1,13 +1,14 @@
 import { ConnectKitButton } from "connectkit"
 import Image from "next/image"
 import logo from "@/assets/logo.svg"
+import { ConnectWallet } from "@thirdweb-dev/react"
 
 export default function Navbar({ className, ...rest }) {
     return (
         <header className="bg-gray-200 py-4">
             <div className="container mx-auto flex items-center justify-between md:px-32 px-4">
                 <Image src={logo} alt="lil-nouns-logo" />
-                <ConnectKitButton />
+                <ConnectWallet theme="light" />
             </div>
         </header>
 
