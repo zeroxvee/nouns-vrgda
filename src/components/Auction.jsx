@@ -85,7 +85,7 @@ const Auction = () => {
                         </div>
                         <div className="mt-4">
                             <div className="flex flex-col">
-                                <div className="w-full">
+                                <div className="w-3/4">
                                     <div className="flex flex-col space-y-10">
                                         <div className="space-y-2">
                                             <div className="col-lg-12">
