@@ -4,9 +4,11 @@ import logo from "@/assets/logo.svg"
 
 export default function Navbar({ className, ...rest }) {
     return (
-        <header className="bg-gray-200 py-4">
+        <header className="bg-gray-200 py-12">
             <div className="container mx-auto flex items-center justify-between md:px-32 px-4">
-                <Image src={logo} alt="lil-nouns-logo" />
+                <a href="/">
+                    <img src="/noggles.7644bfd0.svg" class="h-[40px]" alt="Nouns DAO noggles"/>
+                </a>
                 <ConnectKitButton />
             </div>
         </header>

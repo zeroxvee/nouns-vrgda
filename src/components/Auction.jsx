@@ -12,7 +12,7 @@ const lilNoun =
 
 const Auction = () => {
     return (
-        <div className="container bg-gray-200 mx-auto mt-10">
+        <div className="container bg-gray-200 mx-auto mt-2">
             <div className="flex flex-wrap -mx-6 -mt-0">
                 <div className="flex w-full lg:w-1/2">
                     <div className="w-full relative">
