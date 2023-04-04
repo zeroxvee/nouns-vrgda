@@ -48,7 +48,7 @@ const faq = [
 
 export default function FAQ() {
     return (
-        <div className="bg-white w-full">
+        <div className="bg-white w-full px-6">
             <div className="container bg-white text-black max-w-screen-lg my-16">
                 <div className="flex items-center row">
                     <div className="col-lg-10 offset-lg-1">
