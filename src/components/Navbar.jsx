@@ -1,4 +1,5 @@
 import { ConnectKitButton } from "connectkit"
+import Link  from "next/link"
 import Image from "next/image"
 import logo from "@/assets/logo.svg"
 
@@ -6,9 +7,9 @@ export default function Navbar({ className, ...rest }) {
     return (
         <header className="bg-gray-200 py-12">
             <div className="container mx-auto flex items-center justify-between md:px-32 px-4">
-                <a href="/">
+                <Link href="/">
                     <img src="/noggles.7644bfd0.svg" class="h-[40px]" alt="Nouns DAO noggles"/>
-                </a>
+                </Link>
                 <ConnectKitButton />
             </div>
         </header>

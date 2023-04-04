@@ -73,7 +73,7 @@ export default function AuctionPriceRange() {
         </div>
         <div className="flex flex-row items-center justify-start space-x-[4px] mt-[12px]">
           {colorsClassNames.map((color, index) => {
-            return <PriceBlock bgColor={color} isActive={index === activeIndex} />;
+            return <PriceBlock bgColor={color} key={index} isActive={index === activeIndex} />;
           })}
         </div>
         <>
