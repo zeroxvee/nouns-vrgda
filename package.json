@@ -25,6 +25,7 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "recharts": "^2.5.0",
     "wagmi": "^0.12.8"
   },
   "devDependencies": {

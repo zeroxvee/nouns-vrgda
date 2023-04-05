@@ -27,7 +27,7 @@ const Auction = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex w-full lg:w-1/2 items-center ml-10 md:mx-auto pb-0 md:pr-20 min-h-[520px]">
+                <div className="flex w-full lg:w-1/2 items-center md:mx-auto pb-0 md:pl-10 min-h-[520px]">
                     <div>
                         <div className="mb-2">
                             <div className="flex flex-wrap mb-0">

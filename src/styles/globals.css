@@ -86,7 +86,12 @@
     margin: 0;
 }
 
-
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: Londrina Solid;
+}
 
 body {
     color: rgb(var(--foreground-rgb));
@@ -108,12 +113,7 @@ a {
         color-scheme: dark;
     }
 } */
-html,
-body {
-    /* max-width: 100vw;
-    overflow-x: hidden; */
-    font-family: Londrina Solid;
-}
+
 .container,
 .container-fluid,
 .container-lg,

@@ -25,18 +25,18 @@ export default function AuctionPriceRange() {
   const { data: reservePrice } = useContractRead(contract, "reservePrice");
   const { data: currVRGDAPrice } = useContractRead(contract, "getCurrentVRGDAPrice");
   const { data: targetPrice } = useContractRead(contract, "targetPrice");
+  const maxPrice = 0.1;
+  const currFakePrice = 0.055;
   
-  const resPrice = 0.01;
-  const currPrice = 0.015;
-  const targPrice = 0.05;
-  const midPrice = targPrice - (targPrice - resPrice) / 2;
-
-  console.log(midPrice)
-  console.log("Prices:", reservePrice, currVRGDAPrice, targetPrice);
+  // console.log("Prices:", 
+  //   utils.formatEther(reservePrice.toString()), 
+  //   utils.formatEther(currVRGDAPrice.toString()), 
+  //   utils.formatEther(targetPrice.toString())
+  //   );
   const numPriceBlocks = 15;
   // const activeIndex = numPriceBlocks - (Math.floor((currVRGDAPrice / targetPrice) * numPriceBlocks) - 1);
-  const activeIndex = Math.floor((currPrice / targPrice) * numPriceBlocks) - 1;
-  console.log(activeIndex)
+  const activeIndex = Math.floor((currFakePrice / maxPrice) * numPriceBlocks) - 1;
+  console.log("Active Index", activeIndex)
   const colorsClassNames = [
     'bg-[#FF638D]',
     'bg-[#FF638D]',
@@ -65,10 +65,10 @@ export default function AuctionPriceRange() {
           </h4>
           <h4 className="text-sm -mb-2">
             {/* Ξ{currVRGDAPrice && utils.formatEther(currVRGDAPrice.toString())} */}
-            Ξ{Number(midPrice).toFixed(3)}
+            Ξ{targetPrice && utils.formatEther(targetPrice.toString())}
           </h4>
           <h4 className="text-sm -mb-2">
-            Ξ{targetPrice && utils.formatEther(targetPrice.toString())}
+            Ξ{maxPrice}
           </h4>
         </div>
         <div className="flex flex-row items-center justify-start space-x-[4px] mt-[12px]">

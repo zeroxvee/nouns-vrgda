@@ -6,9 +6,9 @@ import logo from "@/assets/logo.svg"
 export default function Navbar({ className, ...rest }) {
     return (
         <header className="bg-gray-200 py-12">
-            <div className="container mx-auto flex items-center justify-between md:px-32 px-4">
+            <div className="w-[80vw] mx-auto flex items-center justify-between md:px-32 px-4">
                 <Link href="/">
-                    <img src="/noggles.7644bfd0.svg" class="h-[40px]" alt="Nouns DAO noggles"/>
+                    <Image src="/noggles.7644bfd0.svg" width="100" height="40" alt="Nouns DAO noggles"/>
                 </Link>
                 <ConnectKitButton />
             </div>

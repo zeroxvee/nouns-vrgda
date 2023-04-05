@@ -7,8 +7,8 @@ export default function NounID() {
     console.log(nextNoun);
 
     return (
-        <div>
-            <h1 className="text-[#1C2228] text-6xl">
+        <div className="font-londrina">
+            <h1 className="text-[#1C2228] text-7xl">
                 Noun {nextNoun && nextNoun.nounId.toNumber()}
             </h1>
         </div>
