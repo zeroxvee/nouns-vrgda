@@ -6,7 +6,7 @@ export default function AuctionDetails() {
     const { data: currVRGDAPrice } = useContractRead(contract, "getCurrentVRGDAPrice");
     const currFakePrice = 0.055;
 
-    console.log("currVRGDAPrice", currVRGDAPrice);
+    // console.log("currVRGDAPrice", currVRGDAPrice);
 
     return (
         <div className="w-full">

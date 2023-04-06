@@ -36,7 +36,6 @@ export default function AuctionPriceRange() {
   const numPriceBlocks = 15;
   // const activeIndex = numPriceBlocks - (Math.floor((currVRGDAPrice / targetPrice) * numPriceBlocks) - 1);
   const activeIndex = Math.floor((currFakePrice / maxPrice) * numPriceBlocks) - 1;
-  console.log("Active Index", activeIndex)
   const colorsClassNames = [
     'bg-[#FF638D]',
     'bg-[#FF638D]',
