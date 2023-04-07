@@ -74,13 +74,11 @@ import { useContract, useContractWrite, useContractRead } from "@thirdweb-dev/re
 const { ethers } = require("ethers");
 
 export default function BuyNow() {
-  const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/ec11efc0acde425fa9604b66378498da");
+  const provider = new ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/ec11efc0acde425fa9604b66378498da");
   const { contract } = useContract("0xaF71644feEAf6439015D57631f59f8e0E0F91C67");
   const { mutateAsync: settleAuction } = useContractWrite(contract, "settleAuction");
   const { data: expectedNounId } = useContractRead(contract, "nextNounIdForCaller");
 
-  console.log("expectedNounId", expectedNounId);
-  console.log("settleAuction", settleAuction);
 
   const call = async () => {
     try {
@@ -88,13 +86,14 @@ export default function BuyNow() {
         throw new Error("Contract is undefined");
       }
       
-      const parentBlockHash = await provider.getBlock("latest");
-      console.log('parentBlockHash', parentBlockHash.parentHash);
+      const parentBlock = await provider.getBlock("latest");
+      const parentBlockHash = ethers.utils.hexlify(parentBlock.parentHash);
+      const expNounID = ethers.BigNumber.from(expectedNounId)
   
-      const args = [expectedNounId, parentBlockHash.parentHash];
+      const args = [expNounID, parentBlockHash];
       console.log("args", args);
   
-      const tx = await settleAuction(...args);
+      const tx = await settleAuction({args: [expNounID, parentBlockHash]});
       console.info("settleAuction transaction sent:", tx.hash);
   
       const receipt = await tx.wait();
@@ -115,6 +114,7 @@ export default function BuyNow() {
     </div>
   );
 }
+
 
 
 
