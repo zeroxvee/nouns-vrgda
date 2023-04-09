@@ -6,6 +6,7 @@ import AuctionPrice from "./AuctionPrice"
 import NounID from "./NounID"
 import AuctionPriceRange from "./AuctionPriceRange"
 import BuyNow from "./BuyNow"
+import Timer from "./Timer"
 import PriceBlocks from "./PriceBlock"
 import { useContract, useContractRead } from "@thirdweb-dev/react"
 import { ethers } from "ethers"
@@ -75,7 +76,9 @@ const Auction = () => {
                                             </div>
                                         </div>
                                         <div className="flex mt-1 font-bold">
-                                            <div>
+                                            <Timer updateInterval={900000} onReset={() => console.log("Timer reset")} />
+
+                                            {/* <div>
                                                 <span className="text-[#1C2228] text-3xl ">
                                                     3
                                                     <span className="text-2xl">
@@ -90,7 +93,7 @@ const Auction = () => {
                                                         s
                                                     </span>
                                                 </span>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>

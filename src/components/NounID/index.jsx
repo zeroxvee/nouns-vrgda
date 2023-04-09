@@ -4,7 +4,7 @@ export default function NounID() {
     const { contract } = useContract(
         "0xaF71644feEAf6439015D57631f59f8e0E0F91C67"
     )
-    const { data: nextNoun } = useContractRead(contract, "fetchNextNoun")
+    const { data: nextNoun } = useContractRead(contract, "fetchNextNoun");
 
     return (
         <div className="font-londrina">
