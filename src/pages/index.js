@@ -17,7 +17,6 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link rel="icon" href="" />
             </Head>
             <Navbar />
             <main className="App_wrapper__Mru9Z bg-gray-200">

@@ -3,6 +3,10 @@ import Head from "next/head"
 import Image from "next/image"
 import logo from "@/assets/panel-animation2.gif"
 import moment from "moment"
+import AuctionPrice from "./AuctionPrice"
+import NounID from "./NounID"
+import AuctionPriceRange from "./AuctionPriceRange"
+import BuyNow from "./BuyNow"
 import PriceBlocks from "./PriceBlock"
 import { useContract, useContractRead } from "@thirdweb-dev/react"
 import { ethers } from "ethers"
@@ -22,7 +26,7 @@ const Auction = () => {
     console.log(data && eth)
 
     return (
-        <div className="container bg-white md:bg-gray-200 mx-auto mt-10">
+        <div className="container bg-white md:bg-gray-200 mx-auto mt-2">
             <div className="flex flex-wrap -mx-6 md:mx-0 -mt-0">
                 <div className="flex w-full lg:w-1/2">
                     <div className="w-full relative">
@@ -37,7 +41,7 @@ const Auction = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex w-full lg:w-1/2 items-center ml-10 md:mx-auto pb-0 md:pr-20 min-h-[520px]">
+                <div className="flex w-full lg:w-1/2 items-center md:mx-auto pb-0 md:pl-10 min-h-[520px]">
                     <div>
                         <div className="mb-2">
                             <div className="flex flex-col mb-0">
@@ -49,11 +53,7 @@ const Auction = () => {
                                     </div>
                                 </div>
                                 <div className="w-full">
-                                    <div>
-                                        <h1 className="text-[#1C2228] text-4xl font-bold mt-6 font-mono">
-                                            Noun 29
-                                        </h1>
-                                    </div>
+                                    <NounID />
                                 </div>
                             </div>
                             <div className="flex flex-col md:flex-row mb-0">
@@ -62,11 +62,8 @@ const Auction = () => {
                                         <h4 className="text-[#3F92C9] text-lg font-bold">
                                             Current price
                                         </h4>
-                                        <h2 className="text-[#1C2228] text-3xl font-bold">
-                                            Ξ0.1
-                                        </h2>
                                     </div>
-                                    <div className="w-full"></div>
+                                    <AuctionPrice />
                                 </div>
                                 <div className="w-full lg:w-1/2 pl-0">
                                     <div className="cursor-pointer md:px-10 flex flex-row justify-between md:justify-normal md:block items-center">
@@ -107,32 +104,8 @@ const Auction = () => {
                                         <div className="space-y-2">
                                             <div className="col-lg-12">
                                                 <div className="flex flex-col space-y-10">
-                                                    <div className="inline-block relative">
-                                                        <div className="flex lg:justify-between justify-start lg:space-x-0 md:space-x-48 space-x-32 text-[#C7AC8C]">
-                                                            <h4 className="text-sm -mb-2">
-                                                                Ξ0.01
-                                                            </h4>
-                                                            <h4 className="text-sm -mb-2">
-                                                                Ξ0.505
-                                                            </h4>
-                                                            <h4 className="text-sm -mb-2">
-                                                                Ξ1
-                                                            </h4>
-                                                        </div>
-                                                        <div className="">
-                                                            <PriceBlocks
-                                                                price={eth}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="input-group">
-                                                        <button
-                                                            type="button"
-                                                            className="Buy_bidBtn__O3Zyw btn btn-primary hover:bg-slate-800"
-                                                        >
-                                                            Buy Now
-                                                        </button>
-                                                    </div>
+                                                    <AuctionPriceRange />
+                                                    <BuyNow />
                                                 </div>
                                             </div>
                                         </div>

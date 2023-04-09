@@ -1,18 +1,18 @@
 const Footer = () => {
     return (
         <div className="flex">
-            <footer className="Footer_footerSignature__wnClW ">
+            <footer className="Footer_footerSignature__wnClW font-ptSans">
                 <a
                     className="Link_link__DLONq"
-                    href="https://discord.gg/xjARUcB3tJ"
+                    href="https://prop.house/nouns/hack-week-developers-developers-developers/5304"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    Discord
+                    Proposal
                 </a>
                 <a
                     className="Link_link__DLONq"
-                    href="https://twitter.com/lilnounsdao"
+                    href="https://twitter.com/nounsdao"
                     target="_blank"
                     rel="noreferrer"
                 >
@@ -28,7 +28,7 @@ const Footer = () => {
                 </a>
                 <a
                     className="Link_link__DLONq"
-                    href="https://discourse.lilnouns.wtf/"
+                    href="https://discourse.nouns.wtf/"
                     target="_self"
                     rel="noreferrer"
                 >

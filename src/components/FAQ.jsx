@@ -53,7 +53,7 @@ export default function FAQ() {
                 <div className="flex items-center row">
                     <div className="col-lg-10 offset-lg-1">
                         <div className="text-xl pb-16 ">
-                            <h1 className="text-5xl font-semibold mb-8 font-mono">
+                            <h1 className="text-7xl font-semibold mb-8 font-londrina">
                                 WTF is this?
                             </h1>
                             <span className="mt-4">
@@ -98,15 +98,15 @@ function AccordionItem({ title, description }) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
-        <div className=" mb-8 border-none transition-all duration-500 ">
+        <div className=" mb-12 border-none transition-all duration-500 ">
             <h2
-                className="text-xl font-bold mb-8"
+                className="text-5xl mb-12 font-londrina"
                 id="accordion-collapse-heading"
             >
                 <button
                     type="button"
                     aria-expanded={isOpen}
-                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 transition-all"
+                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 hover:text-cyan-500 focus:text-cyan-500 transition-all"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {title}

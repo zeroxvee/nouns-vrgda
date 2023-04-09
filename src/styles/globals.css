@@ -90,6 +90,7 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    font-family: Londrina Solid;
 }
 
 body {
@@ -271,7 +272,7 @@ svg {
 }
 
 .AuctionActivityDateHeadline_date__d1PDA {
-    font-family: PT Root UI;
+    font-family: PT Sans;
     font-size: 17px;
     font-weight: 700;
     line-height: 27px;
@@ -322,7 +323,7 @@ h6 {
     border: transparent;
     border-radius: 12px !important;
     color: #fff;
-    font-family: PT Root UI;
+    font-family: PT Sans;
     font-size: 19px;
     font-weight: 700;
     height: 3rem;
@@ -382,7 +383,7 @@ h6 {
     color: var(--brand-black) !important;
     display: flex;
     flex-flow: row wrap;
-    font-family: PT Root UI !important;
+    font-family: PT Sans !important;
     font-size: 18px;
     font-weight: 500;
     justify-content: flex-start;

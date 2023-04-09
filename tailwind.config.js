@@ -9,7 +9,18 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				londrina: [
+					"Londrina Solid",
+					"sans-serif",
+				],
+				ptSans: [
+					"PT Sans",
+					"sans-serif",
+				]
+			},
+		},
 	},
 	plugins: [],
 };
