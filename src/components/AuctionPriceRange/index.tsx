@@ -23,9 +23,9 @@ const PriceBlock: React.FC<{
 export default function AuctionPriceRange() {
     const { minMintPrice, currMintPrice, targetMintPrice } = useAuction()
 
-    const { contract } = useContract(
-        "0xaF71644feEAf6439015D57631f59f8e0E0F91C67"
-    )
+    // const { contract } = useContract(
+    //     "0xaF71644feEAf6439015D57631f59f8e0E0F91C67"
+    // )
     // const { data: reservePrice } = useContractRead(contract, "reservePrice")
     // const { data: currVRGDAPrice } = useContractRead(
     //     contract,
