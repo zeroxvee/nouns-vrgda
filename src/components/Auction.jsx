@@ -1,7 +1,6 @@
 import React from "react"
 import Head from "next/head"
 import Image from "next/image"
-import logo from "@/assets/panel-animation2.gif"
 import moment from "moment"
 import AuctionPrice from "./AuctionPrice"
 import NounID from "./NounID"
@@ -41,7 +40,7 @@ const Auction = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex w-full lg:w-1/2 items-center md:mx-auto pb-0 md:pl-10 min-h-[520px]">
+                <div className="flex w-full lg:w-1/2 items-center ml-10 md:mx-auto pb-0 md:pr-20 min-h-[520px]">
                     <div>
                         <div className="mb-2">
                             <div className="flex flex-col mb-0">
@@ -62,8 +61,8 @@ const Auction = () => {
                                         <h4 className="text-[#3F92C9] text-lg font-bold">
                                             Current price
                                         </h4>
+                                        <AuctionPrice />
                                     </div>
-                                    <AuctionPrice />
                                 </div>
                                 <div className="w-full lg:w-1/2 pl-0">
                                     <div className="cursor-pointer md:px-10 flex flex-row justify-between md:justify-normal md:block items-center">

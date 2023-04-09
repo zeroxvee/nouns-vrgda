@@ -1,8 +1,4 @@
-import {
-    useContract,
-    useContractWrite,
-    useContractRead,
-} from "@thirdweb-dev/react"
+import { useContract, useContractRead } from "@thirdweb-dev/react"
 import { useEffect, useState } from "react"
 const { ethers } = require("ethers")
 
