@@ -57,19 +57,20 @@ export default function FAQ() {
                                 WTF is this?
                             </h1>
                             <span className="mt-4">
-                                <span className="font-medium">Nouns VRGDA</span>{" "}
+                                <span className="font-bold">Nouns VRGDA</span>{" "}
                                 is project to test out a new minting mechanism
                                 for nouns using a Variable Rate Gradual Dutch
                                 Auction mechanism instead of english auctions.
                                 <br />
                                 <br />
-                                Introducing three concepts:
+                                <span className="font-bold">
+                                    Introducing three concepts:
+                                </span>
                                 <li>pseudo-random block traits generation</li>
+                                <li>variable rate token issuance mechanism</li>
                                 <li>
-                                    a variable rate token issuance mechanism
-                                </li>
-                                <li>
-                                    an on-chain pool of saved and unbought NFTs
+                                    on-chain saved pool of last 3 block unsold
+                                    NFTs
                                 </li>
                             </span>
                         </div>
@@ -98,7 +99,7 @@ function AccordionItem({ title, description }) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
-        <div className=" mb-12 border-none transition-all duration-500 ">
+        <div className=" mb-12 border-none">
             <h2
                 className="text-5xl mb-12 font-londrina"
                 id="accordion-collapse-heading"
@@ -130,7 +131,7 @@ function AccordionItem({ title, description }) {
             </h2>
             {isOpen && (
                 <span
-                    className="mt-4 text-lg duration-500 transition"
+                    className="mt-4 text-lg duration-300 transition transform"
                     id={"accordion-collapse-body"}
                     data-accordion-target="#accordion-collapse-body"
                     aria-expanded="true"

@@ -38,7 +38,7 @@ export default function AuctionDetails() {
 
     return (
         <div className="w-fit md:w-full">
-            <h2 className="text-[#1C2228] text-3xl font-['PT Sans']">
+            <h2 className="text-[#1C2228] text-3xl font-['PT Sans'] font-bold">
                 Ξ
                 {currMintPrice > minMintPrice
                     ? Number(
