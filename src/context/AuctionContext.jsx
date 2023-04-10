@@ -7,24 +7,26 @@ export function useAuction() {
 }
 
 export function AuctionProvider({ children }) {
-    const [nounNFTMeta, setNounNFTMeta] = useState([]);
+    const [nounNFTMeta, setNounNFTMeta] = useState([])
     const [minMintPrice, setMinMintPrice] = useState("")
     const [currMintPrice, setCurrMintPrice] = useState("")
     const [targetMintPrice, setTargetMintPrice] = useState("")
 
     const addNounData = (newNoun) => {
         // Check if the new object has a different hash value from the existing ones
-
-        const isDuplicate = nounNFTMeta ? nounNFTMeta.some(noun => noun.hash === newNoun.hash) : "";
+        const isDuplicate = nounNFTMeta
+            ? nounNFTMeta.some((noun) => noun.hash === newNoun.hash)
+            : false
         if (!isDuplicate) {
             // Add the new object to the beginning of the array
-            setNounNFTMeta([newNoun, ...nounNFTMeta.slice(0, 2)]);
+            const updatedNounNFTMeta = [newNoun, ...nounNFTMeta]
             // Remove the oldest object if there are already 3 objects in the array
-            if (nounNFTMeta.length >= 3) {
-                setNounNFTMeta(nounNFTMeta.slice(0, 3));
+            if (updatedNounNFTMeta.length > 3) {
+                updatedNounNFTMeta.pop()
             }
+            setNounNFTMeta(updatedNounNFTMeta)
         }
-    };
+    }
 
     const value = {
         addNounData,

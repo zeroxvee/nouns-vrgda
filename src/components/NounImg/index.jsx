@@ -1,31 +1,32 @@
-import { useContract, useContractRead } from "@thirdweb-dev/react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useAuction } from "../../context/AuctionContext";
+import { useContract, useContractRead } from "@thirdweb-dev/react"
+import Image from "next/image"
+import { useState, useEffect } from "react"
+import { useAuction } from "../../context/AuctionContext"
 
 export default function NounImg() {
-    const { contract } = useContract("0xaF71644feEAf6439015D57631f59f8e0E0F91C67");
-    const [lilNoun, setLilNoun] = useState("");
+    const { contract } = useContract(
+        "0xaF71644feEAf6439015D57631f59f8e0E0F91C67"
+    )
+    const [lilNoun, setLilNoun] = useState("")
     const { addNounData, nounNFTMeta } = useAuction()
 
     const nounData = async () => {
-        const nounMeta = await contract.call("fetchNextNoun");
-        const newLilNoun = nounMeta ? `data:image/svg+xml;base64,${nounMeta.svg}` : "";
+        const nounMeta = await contract.call("fetchNextNoun")
+        const newLilNoun = nounMeta
+            ? `data:image/svg+xml;base64,${nounMeta.svg}`
+            : ""
         setLilNoun(newLilNoun)
-        console.log("nounMeta", nounMeta)
         addNounData(nounMeta)
         // AuctionContext.setValue(nounMeta); // push new original data to AuctionContext
     }
 
-    
     useEffect(() => {
         const interval = setInterval(() => {
             nounData()
-            console.log('nounNFTMeta', nounNFTMeta);
-        }, 1000);
+        }, 1000)
 
-        return () => clearInterval(interval);
-    }, [lilNoun, contract]);
+        return () => clearInterval(interval)
+    }, [lilNoun, contract])
 
     return (
         <div className="flex w-full lg:w-1/2">
@@ -41,5 +42,5 @@ export default function NounImg() {
                 </div>
             </div>
         </div>
-    );
+    )
 }

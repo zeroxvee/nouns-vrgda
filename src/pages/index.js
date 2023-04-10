@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar"
 import Auction from "@/components/Auction"
 import Footer from "@/components/Footer"
 import FAQ from "@/components/FAQ"
+import PrevNFTs from "@/components/PrevNFTs"
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             <Navbar />
             <main className="App_wrapper__Mru9Z bg-gray-200">
                 <Auction />
+                <PrevNFTs />
                 <FAQ />
             </main>
             <Footer />
