@@ -14,7 +14,7 @@ const PrevNFTs = () => {
             </h2>
             <div className="flex flex-col md:flex-row p-6 justify-evenly">
                 {nounNFTMeta &&
-                    nounNFTMeta.map((nft, index) => (
+                    nounNFTMeta.slice(-3).map((nft, index) => (
                         <div key={index} className="py-6">
                             <Image
                                 src={`data:image/svg+xml;base64,${nft.svg}`}

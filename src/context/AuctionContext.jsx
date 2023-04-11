@@ -21,7 +21,7 @@ export function AuctionProvider({ children }) {
             // Add the new object to the beginning of the array
             const updatedNounNFTMeta = [newNoun, ...nounNFTMeta]
             // Remove the oldest object if there are already 3 objects in the array
-            if (updatedNounNFTMeta.length > 3) {
+            if (updatedNounNFTMeta.length > 4) {
                 updatedNounNFTMeta.pop()
             }
             setNounNFTMeta(updatedNounNFTMeta)

@@ -11,7 +11,7 @@ export default function NounImg() {
     const { addNounData, nounNFTMeta } = useAuction()
 
     const nounData = async () => {
-        const nounMeta = await contract.call("fetchNextNoun")
+        const nounMeta = await contract?.call("fetchNextNoun")
         const newLilNoun = nounMeta
             ? `data:image/svg+xml;base64,${nounMeta.svg}`
             : ""
