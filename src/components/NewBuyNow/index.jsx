@@ -2,19 +2,17 @@ import { useContract, useContractRead } from "@thirdweb-dev/react"
 import { useEffect, useState } from "react"
 const { ethers } = require("ethers")
 
-export default function BuyNow() {
-    const [parentBlockHash, setParentBlockHash] = useState("")
+export default function BuyNow({ nft, currMintPrice }) {
 
+    const parentBlockHash = nft.hash;
+    const expNounID = nft.nounId;
     const provider = new ethers.providers.JsonRpcProvider(
         "https://goerli.rpc.thirdweb.com"
     )
+
     // lilnouns sandox Goerli contract address
     const { contract } = useContract(
         "0xaF71644feEAf6439015D57631f59f8e0E0F91C67"
-    )
-    const { data: expectedNounId } = useContractRead(
-        contract,
-        "nextNounIdForCaller"
     )
 
     const call = async () => {
@@ -22,7 +20,8 @@ export default function BuyNow() {
             if (!contract) {
                 throw new Error("Contract is undefined")
             }
-            const expNounID = ethers.BigNumber.from(expectedNounId)
+            console.log('expNounID', expNounID);
+            console.log('parentBlockHash', parentBlockHash);
             const price = ethers.utils.parseEther("0.01")
             const args = [expNounID, parentBlockHash]
             const tx = await contract.call("settleAuction", args, {
@@ -42,15 +41,9 @@ export default function BuyNow() {
     }
 
     useEffect(() => {
-        const intervalId = setInterval(async () => {
-            const parentBlock = await provider.getBlock("latest")
-            setParentBlockHash(ethers.utils.hexlify(parentBlock.hash))
-        }, 1000)
-
         return () => {
-            clearInterval(intervalId)
         }
-    }, [parentBlockHash])
+    }, [provider])
 
     return (
         <div className="input-group">

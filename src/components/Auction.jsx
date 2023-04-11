@@ -24,25 +24,12 @@ const Auction = () => {
         "getCurrentVRGDAPrice"
     )
     let eth = data && ethers.utils.formatEther(data.toString())
-    console.log(data && eth)
+    // console.log(data && eth)
 
     return (
         <div className="container bg-white md:bg-gray-200 mx-auto mt-2">
             <div className="flex flex-wrap -mx-6 md:mx-0 -mt-0">
                 <NounImg />
-                {/* <div className="flex w-full lg:w-1/2">
-                    <div className="w-full relative">
-                        <div className="md:h-0 w-full">
-                            <Image
-                                src={lilNoun}
-                                alt="Noun Image"
-                                className="md:absolute top-0 left-0 w-full md:h-full"
-                                width={300}
-                                height={300}
-                            />
-                        </div>
-                    </div>
-                </div> */}
                 <div className="flex w-full lg:w-1/2 items-center ml-10 md:mx-auto pb-0 md:pr-20 min-h-[520px]">
                     <div>
                         <div className="mb-2">
