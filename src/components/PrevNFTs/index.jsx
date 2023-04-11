@@ -6,7 +6,8 @@ import NewBuyNow from "../NewBuyNow"
 
 const PrevNFTs = () => {
     const { nounNFTMeta, currMintPrice } = useAuction()
-    console.log('nounNFTMeta PrevNFTs', nounNFTMeta);
+
+    console.log('nounNFTMeta, currMintPrice', nounNFTMeta, currMintPrice)
     return (
         <div className="container px-20">
             <h2 className="font-londrina text-center text-4xl pt-4 md:pt-16">
@@ -19,8 +20,8 @@ const PrevNFTs = () => {
                             <Image
                                 src={`data:image/svg+xml;base64,${nft.svg}`}
                                 alt={`NFT ${index}`}
-                                width={150}
-                                height={150}
+                                width={212}
+                                height={200}
                             />
                             <p className="pt-2 font-bold">
                                 {/* Price: {ethers.utils.formatEther(nft.price)} */}
