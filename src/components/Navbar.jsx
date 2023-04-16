@@ -4,7 +4,7 @@ import { ConnectWallet } from "@thirdweb-dev/react"
 
 export default function Navbar({ className, ...rest }) {
     return (
-        <header className="bg-gray-200 py-12">
+        <header className="bg-nouns-blue py-12">
             <div className="container mx-auto flex items-center justify-between md:px-32 px-4">
                 <Link href="/">
                     <Image

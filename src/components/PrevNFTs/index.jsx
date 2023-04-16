@@ -2,14 +2,15 @@ import React from "react"
 import { useAuction } from "@/context/AuctionContext.jsx"
 import { ethers } from "ethers"
 import Image from "next/image"
-import NewBuyNow from "../NewBuyNow"
+import BuyNow from "../BuyNow"
 
 const PrevNFTs = () => {
     const { nounNFTMeta, currMintPrice } = useAuction()
+    console.log('nounNFTMeta', nounNFTMeta)
 
     console.log('nounNFTMeta, currMintPrice', nounNFTMeta, currMintPrice)
     return (
-        <div className="container px-20">
+        <div className="w-full bg-white px-20">
             <h2 className="font-londrina text-center text-4xl pt-4 md:pt-16">
                 Last 3 blocks:
             </h2>
@@ -26,7 +27,7 @@ const PrevNFTs = () => {
                             <p className="pt-2 font-bold">
                                 {/* Price: {ethers.utils.formatEther(nft.price)} */}
                             </p>
-                            <NewBuyNow nft={nft} currMintPrice={currMintPrice} />
+                            <BuyNow nft={nft} currMintPrice={currMintPrice} />
                         </div>
                     ))}
             </div>
