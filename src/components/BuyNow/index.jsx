@@ -1,10 +1,32 @@
-import { useContract, useContractRead } from "@thirdweb-dev/react"
+import {
+    useContract,
+    useContractWrite,
+    useContractRead,
+} from "@thirdweb-dev/react"
 import { useEffect, useState } from "react"
 const { ethers } = require("ethers")
 
-export default function BuyNow({ nft, currMintPrice }) {
+export default function BuyNow({ nft, currMintPrice, nftNo }) {
+    const [parentBlockHash, setParentBlockHash] = useState("");
+    const [parentBlockHashMinusOne, setParentBlockHashMinusOne] = useState("");
+    const [parentBlockHashMinusTwo, setParentBlockHashMinusTwo] = useState("");
+    const [parentBlockHashMinusThree, setParentBlockHashMinusThree] = useState("");
+    let prtBlockHash
 
-    const parentBlockHash = nft?.hash;
+    if (nftNo === 0) {
+        prtBlockHash = parentBlockHash
+    } else if (nftNo === 1) {
+        prtBlockHash = parentBlockHashMinusOne
+    } else if (nftNo === 2) {
+        prtBlockHash = parentBlockHashMinusTwo
+    } else if (nftNo === 3) {
+        prtBlockHash = parentBlockHashMinusThree
+    } 
+    console.log('nft', nft)
+    console.log('parentBlockHash', parentBlockHash);
+    console.log('parentBlockHashMinusOne', parentBlockHashMinusOne);
+    console.log('parentBlockHashMinusTwo', parentBlockHashMinusTwo);
+    console.log('parentBlockHashMinusThree', parentBlockHashMinusThree);
     const expNounID = nft?.nounId;
     const provider = new ethers.providers.JsonRpcProvider(
         "https://goerli.rpc.thirdweb.com"
@@ -21,12 +43,13 @@ export default function BuyNow({ nft, currMintPrice }) {
                 throw new Error("Contract is undefined")
             }
             console.log('expNounID', expNounID);
-            console.log('parentBlockHash', parentBlockHash);
+            console.log('parentBlockHash', prtBlockHash);
             const price = ethers.utils.parseEther("0.01")
-            const args = [expNounID, parentBlockHash]
+            const args = [expNounID, prtBlockHash]
             const tx = await contract.call("settleAuction", args, {
                 value: price,
                 gasLimit: 1000000,
+                gasPrice: ethers.utils.parseUnits("100", "gwei"),
             })
             console.info("settleAuction transaction sent:", tx.hash)
 
@@ -41,9 +64,21 @@ export default function BuyNow({ nft, currMintPrice }) {
     }
 
     useEffect(() => {
+        const intervalId = setInterval(async () => {
+            const parentBlock = await provider.getBlock("latest")
+            setParentBlockHash(ethers.utils.hexlify(parentBlock.hash))
+            const parentBlockMinusOne = await provider.getBlock(parseInt(`${parentBlock?.number - 1}`))
+            setParentBlockHashMinusOne(ethers.utils.hexlify(parentBlockMinusOne.hash))
+            const parentBlockMinusTwo = await provider.getBlock(parseInt(`${parentBlock?.number - 2}`))
+            setParentBlockHashMinusTwo(ethers.utils.hexlify(parentBlockMinusTwo.hash))
+            const parentBlockMinusThree = await provider.getBlock(parseInt(`${parentBlock?.number - 3}`))
+            setParentBlockHashMinusThree(ethers.utils.hexlify(parentBlockMinusThree.hash))
+        }, 1000)
+
         return () => {
+            clearInterval(intervalId)
         }
-    }, [provider])
+    }, [parentBlockHash])
 
     return (
         <div className="input-group">

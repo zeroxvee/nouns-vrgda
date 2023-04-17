@@ -88,7 +88,7 @@ const Auction = () => {
                                             <div className="col-lg-12">
                                                 <div className="flex flex-col space-y-10">
                                                     <AuctionPriceRange />
-                                                    <BuyNow nft={nounNFTMeta[0]} currMintPrice={currMintPrice} />
+                                                    <BuyNow nft={nounNFTMeta[0]} currMintPrice={currMintPrice} nftNo={0}/>
                                                 </div>
                                             </div>
                                         </div>
