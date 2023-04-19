@@ -32,7 +32,7 @@ const Footer = () => {
                     target="_self"
                     rel="noreferrer"
                 >
-                    Forums
+                    Forum
                 </a>
             </footer>
         </div>

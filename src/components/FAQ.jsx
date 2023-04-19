@@ -106,7 +106,7 @@ function AccordionItem({ title, description }) {
                 <button
                     type="button"
                     aria-expanded={isOpen}
-                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 hover:text-cyan-500 focus:text-cyan-500 transition-all"
+                    className="w-full text-left flex flex-row justify-between items-center transform hover:scale-105 hover:text-nouns-lime transition-all"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {title}
