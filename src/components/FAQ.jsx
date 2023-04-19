@@ -48,12 +48,12 @@ const faq = [
 
 export default function FAQ() {
     return (
-        <div className="bg-white w-full px-6">
-            <div className="container bg-white text-black max-w-screen-lg my-16">
+        <div className="bg-dark-gray w-full px-6">
+            <div className="container bg-dark-gray text-white max-w-screen-lg my-16">
                 <div className="flex items-center row">
                     <div className="col-lg-10 offset-lg-1">
                         <div className="text-xl pb-16 ">
-                            <h1 className="text-7xl font-semibold mb-8 font-londrina">
+                            <h1 className="text-5xl font-semibold mb-8 font-press">
                                 WTF is this?
                             </h1>
                             <span className="mt-4">
@@ -100,7 +100,7 @@ function AccordionItem({ title, description }) {
     return (
         <div className=" mb-12 border-none transition-all duration-500 ">
             <h2
-                className="text-5xl mb-12 font-londrina"
+                className="text-2xl mb-12 font-press"
                 id="accordion-collapse-heading"
             >
                 <button

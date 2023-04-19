@@ -16,7 +16,7 @@ const Auction = () => {
 
 
     return (
-        <div className="container bg-white md:bg-nouns-blue mx-auto mt-2">
+        <div className="container bg-white md:bg-nouns-lime mx-auto mt-2">
             <div className="flex flex-wrap -mx-6 md:mx-0 -mt-0">
                 <NounImg />
                 <div className="flex w-full lg:w-1/2 items-center ml-10 md:mx-auto pb-0 md:pr-20 min-h-[520px]">
@@ -25,15 +25,15 @@ const Auction = () => {
                             <div className="flex flex-col mb-0">
                                 <div className="w-full">
                                     <div className="w-auto">
-                                        <h4 className="text-[#3F92C9] mt-1 text-lg font-bold">
+                                        <h4 className="text-dark-gray mt-1 text-lg font-bold">
                                             {moment().format("MMMM Do, YYYY")}
                                         </h4>
                                     </div>
                                 </div>
                                 <div className="w-full">
-                                    <div className="font-londrina">
-                                        <h1 className="text-[#1C2228] text-7xl mt-2">
-                                            Noun {nounNFTMeta && nounNFTMeta[0]?.nounId.toNumber()}
+                                    <div className="font-press">
+                                        <h1 className="text-dark-gray text-5xl mt-2">
+                                            Robo Noun {nounNFTMeta && nounNFTMeta[0]?.nounId.toNumber()}
                                         </h1>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@ const Auction = () => {
                             <div className="flex flex-col md:flex-row mb-0">
                                 <div className="border-r-[#79809c49] w-full lg:w-1/3">
                                     <div className="px-0 flex flex-row justify-between md:justify-normal items-center md:block">
-                                        <h4 className="text-[#3F92C9] text-lg font-bold">
+                                        <h4 className="text-dark-gray text-lg font-bold">
                                             Current price
                                         </h4>
                                         <AuctionPrice />
@@ -51,7 +51,7 @@ const Auction = () => {
                                     <div className="cursor-pointer md:px-10 flex flex-row justify-between md:justify-normal md:block items-center">
                                         <div className="mt-1 w-full">
                                             <div className="flex items-center space-x-2">
-                                                <h4 className="text-[#3F92C9] mb-0 text-lg font-bold">
+                                                <h4 className="text-dark-gray mb-0 text-lg font-bold">
                                                     Price drops in
                                                 </h4>
                                             </div>

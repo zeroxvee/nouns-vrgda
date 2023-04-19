@@ -29,7 +29,7 @@ export default function BuyNow({ nft, currMintPrice, nftNo }) {
     console.log('parentBlockHashMinusThree', parentBlockHashMinusThree);
     const expNounID = nft?.nounId;
     const provider = new ethers.providers.JsonRpcProvider(
-        "https://goerli.rpc.thirdweb.com"
+        "https://eth-goerli.g.alchemy.com/v2/BgA6XZL6TubsjQaFB0Yupu0yB6_oqDM8"
     )
 
     // lilnouns sandox Goerli contract address
@@ -44,12 +44,11 @@ export default function BuyNow({ nft, currMintPrice, nftNo }) {
             }
             console.log('expNounID', expNounID);
             console.log('parentBlockHash', prtBlockHash);
-            const price = ethers.utils.parseEther("0.01")
+            const price = ethers.utils.parseEther("0.0001")
             const args = [expNounID, prtBlockHash]
             const tx = await contract.call("settleAuction", args, {
                 value: price,
                 gasLimit: 1000000,
-                gasPrice: ethers.utils.parseUnits("100", "gwei"),
             })
             console.info("settleAuction transaction sent:", tx.hash)
 
@@ -64,7 +63,7 @@ export default function BuyNow({ nft, currMintPrice, nftNo }) {
     }
 
     useEffect(() => {
-        const intervalId = setInterval(async () => {
+        const fetchParentBlocks = async () => {
             const parentBlock = await provider.getBlock("latest")
             setParentBlockHash(ethers.utils.hexlify(parentBlock.hash))
             const parentBlockMinusOne = await provider.getBlock(parseInt(`${parentBlock?.number - 1}`))
@@ -73,8 +72,12 @@ export default function BuyNow({ nft, currMintPrice, nftNo }) {
             setParentBlockHashMinusTwo(ethers.utils.hexlify(parentBlockMinusTwo.hash))
             const parentBlockMinusThree = await provider.getBlock(parseInt(`${parentBlock?.number - 3}`))
             setParentBlockHashMinusThree(ethers.utils.hexlify(parentBlockMinusThree.hash))
+        }
+    
+        const intervalId = setInterval(async () => {
+            await fetchParentBlocks()
         }, 1000)
-
+    
         return () => {
             clearInterval(intervalId)
         }

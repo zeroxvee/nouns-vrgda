@@ -25,6 +25,7 @@ export default function AuctionDetails() {
     const minMintPrice = loadingMin ? "" : ethers.utils.formatEther(minPrice)
     const currMintPrice = loadingCurr ? "" : ethers.utils.formatEther(currentPrice)
     const targetMintPrice = loadingTarget ? "" : ethers.utils.formatEther(targetPrice)
+    console.log('currMintPrice', currMintPrice)
 
     useEffect(() => {
         setMinMintPrice(minMintPrice)

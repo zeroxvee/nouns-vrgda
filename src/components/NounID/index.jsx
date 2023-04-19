@@ -9,7 +9,7 @@ export default function NounID() {
     return (
         <div className="font-londrina">
             <h1 className="text-[#1C2228] text-7xl mt-2">
-                Noun {nextNoun && nextNoun.nounId.toNumber()}
+                Robo Noun {nextNoun && nextNoun.nounId.toNumber()}
             </h1>
         </div>
     )

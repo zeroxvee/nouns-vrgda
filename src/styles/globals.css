@@ -203,6 +203,8 @@ svg {
     vertical-align: middle;
 }
 
+
+
 .Noun_imgWrapper__JbApJ {
     height: 0;
     padding-top: 100%;
@@ -383,7 +385,6 @@ h6 {
     color: var(--brand-black) !important;
     display: flex;
     flex-flow: row wrap;
-    font-family: PT Sans !important;
     font-size: 18px;
     font-weight: 500;
     justify-content: flex-start;
@@ -397,4 +398,9 @@ h6 {
     margin: 8px 14px;
     text-decoration: none;
     transition: all 0.15s ease-in-out;
+}
+
+.text-neon-blue{
+	--tw-text-opacity: 1 !important;
+	color: rgba(80, 193, 255, var(--tw-text-opacity)) !important;
 }

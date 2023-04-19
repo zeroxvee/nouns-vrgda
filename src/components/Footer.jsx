@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
-        <div className="flex">
-            <footer className="Footer_footerSignature__wnClW font-ptSans">
+        <div className="flex bg-nouns-lime">
+            <footer className="Footer_footerSignature__wnClW font-press text-lg">
                 <a
                     className="Link_link__DLONq"
                     href="https://prop.house/nouns/hack-week-developers-developers-developers/5304"

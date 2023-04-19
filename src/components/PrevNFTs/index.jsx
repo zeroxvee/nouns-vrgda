@@ -10,8 +10,8 @@ const PrevNFTs = () => {
 
     console.log('nounNFTMeta, currMintPrice', nounNFTMeta, currMintPrice)
     return (
-        <div className="w-full bg-white px-20">
-            <h2 className="font-londrina text-center text-4xl pt-4 md:pt-16">
+        <div className="w-full bg-dark-gray px-20">
+            <h2 className="font-press text-center text-white text-2xl pt-4 md:pt-16">
                 Last 3 blocks:
             </h2>
             <div className="flex flex-col md:flex-row p-6 justify-evenly">

@@ -28,7 +28,7 @@ const TimeLeft = ({ updateInterval, onReset }) => {
     }${seconds}s`;
   };
 
-  return <span className="text-[#1C2228] text-3xl font-['PT Sans']">{formatTime(timeLeft)}</span>;
+  return <span className="text-dark-gray text-3xl font-['PT Sans']">{formatTime(timeLeft)}</span>;
 };
 
 export default TimeLeft
